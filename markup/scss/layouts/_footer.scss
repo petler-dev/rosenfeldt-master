@@ -1,0 +1,159 @@
+#footer {
+  background-color: #fff;
+  padding: 40px 0;
+
+  @include media ('>=tablet') {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 22px;
+
+    @include media ('>=tablet') {
+      padding: 0 20px;
+    }
+  }
+
+  .row-holder {
+    align-items: unset;
+
+    .col-4 {
+      &:first-child {
+        @include media ('<=tablet') {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .footer-slogan {
+    font-size: 10px;
+
+    @include media ('>=tablet') {
+      font-size: 16px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 9px;
+    
+    @include media ('>=tablet') {
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+  }
+
+  .col-4 {
+    margin-bottom: 51px;
+
+    @include media ('>=desktop') {
+      margin-bottom: 0;
+    }
+  }
+
+  address {
+    font-style: normal;
+    display: inline-block;
+  }
+}
+
+.footer-logo {
+  width: 140px;
+  margin-bottom: 32px;
+
+  @include media ('>=tablet') {
+    width: 209px;
+  }
+}
+
+.pay-block {
+  @extend %listreset;
+  max-width: 232px;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  align-items: center;
+
+  a {
+    display: flex;
+  }
+}
+
+.footer-list {
+  @extend %listreset;
+
+  li {
+    letter-spacing: -0.4px;
+    margin-bottom: 7px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      a {
+        color: $black
+      }
+    }
+
+    @include media ('>=tablet') {
+      margin-bottom: 21px;
+    }
+
+    a {
+      @include animate(color);
+
+      font-size: 10px;
+      color: $gray;
+      text-decoration: none;
+
+      @include media ('>=tablet') {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &.social-list {
+    li {
+      @include media ('<=tablet') {
+        margin-bottom: 10px;
+      }
+
+      &:hover {
+        .icon {
+          background-color: $black;
+        }
+      }
+    }
+    a {
+      position: relative;
+      padding-left: 35px;
+
+      .icon {
+        @include animate(background);
+
+        position: absolute;
+        left: 0;
+        top: -3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        background-color: #909090;
+        border: 1px solid #cbcbcb;
+
+        @include media ('>=tablet') {
+          width: 25px;
+          height: 25px;
+          top: -4px;
+        }
+
+        &:before {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
